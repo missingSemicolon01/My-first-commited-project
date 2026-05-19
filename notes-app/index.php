@@ -51,15 +51,16 @@ usort($notes, function ($a, $b) {
        <?= nl2br(htmlspecialchars($note['content'])) ?>
       </p>
       <div class="note-footer">
-       <small>
-        <?= $note['date'] ?>
-       </small>
-       <form action="delete.php" method="POST" class="delete-form">
-        <input type="hidden" name="id" value="<?= $note['id'] ?>">
-        <button type="submit" onclick="return confirm('Delete this note?')">
-         Delete
-        </button>
-       </form>
+       <small><?= $note['date'] ?></small>
+       <div class="actions">
+        <a href="edit.php?id=<?= $note['id'] ?>" class="btn-edit">Edit</a>
+        <form action="delete.php" method="POST" class="delete-form">
+         <input type="hidden" name="id" value="<?= $note['id'] ?>">
+         <button type="submit" onclick="return confirm('Delete this note?')">
+          Delete
+         </button>
+        </form>
+       </div>
       </div>
      </div>
     <?php endforeach; ?>
