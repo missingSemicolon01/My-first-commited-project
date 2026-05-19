@@ -19,6 +19,7 @@ if ($lang == "en") {
     $questionLabel = "Question";
     $suggestLabel = "Suggestion";
     $reqfields = "Required fields.";
+    $goBackBtn = "Go Back";
 
     $nameRequired = "Name is required.";
     $emailRequired = "Email is required.";
@@ -45,6 +46,7 @@ if ($lang == "en") {
     $questionLabel = "Ερώτηση";
     $suggestLabel = "Πρόταση";
     $reqfields = "Υποχρεωτικά Πεδία";
+    $goBackBtn = "Επιστροφή";
 
     $nameRequired = "Το όνομα είναι υποχρεωτικό.";
     $emailRequired = "Το email είναι υποχρεωτικό.";
@@ -326,6 +328,9 @@ if ($formSubmitted) {
                     <?php foreach ($errors as $error) { ?>
                         <li><?php echo htmlspecialchars($error); ?></li>
                     <?php } ?>
+                    <button type="button" onclick="history.back()">
+                        <?php echo $goBackBtn; ?>
+                    </button>
                 </ul>
 
             <?php } else { ?>
