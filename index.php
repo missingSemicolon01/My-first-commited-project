@@ -1,7 +1,6 @@
 <?php
 # Checking if the user set a language, if not we set a default.
 $lang = $_GET["lang"] ?? "el";
-
 # Labels in Every Language
 if ($lang == "en") {
     $title = "Contact Us";
@@ -105,8 +104,10 @@ if ($formSubmitted) {
     <meta charset="UTF-8">
     <!-- If the form is submitted check if there are errors or not to print the correct title,if it is not submitted we print the default title. -->
     <?php if ($formSubmitted) { ?>
+
         <title><?php echo !empty($errors) ? $errorTitle : $successTitle; ?></title>
     <?php } else { ?>
+
         <title><?php echo $title; ?></title>
     <?php } ?>
     <style>
@@ -265,7 +266,9 @@ if ($formSubmitted) {
     <?php if (!$formSubmitted) { ?>
 
         <!-- FORM PAGE -->
+
         <div class="form-container">
+            <a href="?lang=en">English</a> | <a href="?lang=el">Ελληνικά</a>
             <h1 class="form-title"><?php echo $title; ?></h1>
 
             <!-- We send all our submitted data in the same file via POST -->
